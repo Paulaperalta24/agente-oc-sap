@@ -1,0 +1,22 @@
+{
+  "name": "agente-oc-sap",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "typecheck": "bun check",
+    "demo": "bun run demo.ts",
+    "dev": "bun --watch src/server.ts",
+    "start": "bun run src/server.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  },
+  "dependencies": {
+    "@google/genai": "^3.0.0",
+    "zod": "^4.6.7"
+  }
+}

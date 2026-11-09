@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Órdenes de Compra SAP · Periferia</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark">OC</div>
+      <div>
+        <p class="eyebrow">PERIFERIA IT GROUP</p>
+        <h1>Órdenes de Compra SAP</h1>
+      </div>
+      <span class="status" id="api-status">Conectando API…</span>
+    </header>
+
+    <section class="intro">
+      <p>Procesa un caso como <strong>sol-001</strong> o <strong>sol-004</strong>. El agente muestra cada validación y te pedirá confirmación antes de crear excepciones.</p>
+      <div class="quick-actions">
+        <button type="button" data-prompt="Procesa la solicitud sol-001.">Procesar sol-001</button>
+        <button type="button" data-prompt="Procesa la solicitud sol-004. Muéstrame la OC y no la crees hasta que yo confirme.">Revisar sol-004</button>
+      </div>
+    </section>
+
+    <section class="chat-card" aria-label="Conversación con el agente">
+      <div class="messages" id="messages" aria-live="polite">
+        <article class="message agent">
+          <p class="message-label">Agente OC</p>
+          <p>Estoy listo para procesar solicitudes de orden de compra. ¿Qué caso deseas revisar?</p>
+        </article>
+      </div>
+      <div class="thinking" id="thinking" hidden><span></span> Analizando solicitud y controles…</div>
+      <div class="confirmation" id="confirmation" hidden>
+        <strong>Confirmación requerida</strong>
+        <p>El agente detectó una excepción. Revisa los resultados y responde explícitamente “confirmo” para continuar.</p>
+      </div>
+      <form id="chat-form" class="composer">
+        <label class="sr-only" for="message-input">Mensaje</label>
+        <textarea id="message-input" rows="2" placeholder="Ej.: Procesa la solicitud sol-001" required></textarea>
+        <button id="send-button" type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>
